@@ -9,4 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploying
-        run: echo "Deploying reach labs"
+        run: |
+          echo "Deploying reach labs"
+          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
