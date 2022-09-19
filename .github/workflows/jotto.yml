@@ -6,4 +6,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    command: echo "Deploying jotto"
+    steps:
+      - name: Deploying
+        run: echo "Deploying reach labs"
