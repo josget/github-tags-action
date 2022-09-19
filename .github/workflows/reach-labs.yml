@@ -6,4 +6,5 @@ on:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
     command: echo "Deploying reach labs"
