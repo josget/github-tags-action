@@ -1,8 +1,9 @@
 name: Deploy Reach Labs
 on:
   push:
-    tags: 'reach-labs**staging'
-
+    tags:
+      - 'reach-labs**staging'
+      - 'all-**'
 
 jobs:
   deploy:

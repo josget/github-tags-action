@@ -1,7 +1,9 @@
 name: Deploy Jotto
 on:
   push:
-    tags: 'jotto**staging'
+    tags:
+      - 'jotto**staging'
+      - 'all-**'
 
 jobs:
   deploy:
