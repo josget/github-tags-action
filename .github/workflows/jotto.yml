@@ -1,7 +1,7 @@
 name: Deploy Jotto
 on:
   push:
-    branch: main
+    tags: 'jotto**staging'
 
 jobs:
   deploy:
