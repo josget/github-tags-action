@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy to staging:
-    if: contains(${{  github.ref_name }}, 'staging')
+    if: "endsWith(github.ref_name, 'staging')"
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to staging
@@ -15,7 +15,7 @@ jobs:
           echo "Deploying to staging"
 
   deploy to production:
-    if: !contains(${{ github.ref_name }}, 'staging')
+    if: "!endsWith(github.ref_name, 'staging')"
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to production
