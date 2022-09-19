@@ -2,14 +2,22 @@ name: Deploy Reach Labs
 on:
   push:
     tags:
-      - 'reach-labs**staging'
-      - 'all-**'
+      - 'reach-labs**'
+      - 'all**'
 
 jobs:
-  deploy:
+  deploy to staging:
+    if: contains(${{  github.ref_name }}, 'staging')
     runs-on: ubuntu-latest
     steps:
-      - name: Deploying
+      - name: Deploy to staging
         run: |
-          echo "Deploying reach labs"
-          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+          echo "Deploying to staging"
+
+  deploy to production:
+    if: !contains(${{ github.ref_name }}, 'staging')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to production
+        run: |
+          echo "Deploying to production"
