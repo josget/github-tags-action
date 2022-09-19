@@ -1,0 +1,8 @@
+name: Deploy Jotto
+on:
+  push:
+    branch: main
+
+jobs:
+  deploy:
+    command: echo "Deploying jotto"
