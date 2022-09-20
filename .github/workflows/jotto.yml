@@ -5,6 +5,9 @@ on:
       - 'jotto**'
       - 'all**'
 
+env:
+  APP_PATH: 'dist/apps/jotto/'
+
 jobs:
   deploy-to-staging:
     if: "endsWith(github.ref_name, 'staging')"
@@ -12,7 +15,7 @@ jobs:
     steps:
       - name: Deploy to staging
         run: |
-          echo "Deploying to staging"
+          echo "Deploying to staging $APP_PATH"
 
   deploy-to-production:
     if: "!endsWith(github.ref_name, 'staging')"
